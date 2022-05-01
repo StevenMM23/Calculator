@@ -62,6 +62,7 @@
             this.btn1.Text = "1";
             this.btn1.UseVisualStyleBackColor = true;
             this.btn1.Click += new System.EventHandler(this.btn1_Click);
+            this.btn1.Validated += new System.EventHandler(this.btn1_Validated);
             // 
             // Btn8
             // 
@@ -183,6 +184,7 @@
             this.equalbtn.Text = "=";
             this.equalbtn.UseVisualStyleBackColor = true;
             this.equalbtn.Click += new System.EventHandler(this.equalbtn_Click);
+            this.equalbtn.MouseClick += new System.Windows.Forms.MouseEventHandler(this.equalbtn_MouseClick);
             // 
             // plusbtn
             // 

@@ -17,13 +17,17 @@ namespace Calculator
             InitializeComponent();
         }
 
-        public static int  ResetCalculate()
-        {
-            return 0;
-        }
+        
         private void button3_Click(object sender, EventArgs e)
         {
-            PantallaLabel.Text += "6";
+            if (PantallaLabel.Enabled)
+                PantallaLabel.Text += "6";
+            else
+            {
+                PantallaLabel.Enabled = true;
+                PantallaLabel.Text = "";
+                PantallaLabel.Text += "6";
+            }
         }
 
         private void button10_Click(object sender, EventArgs e)
@@ -37,19 +41,38 @@ namespace Calculator
 
         private void button14_Click(object sender, EventArgs e)
         {
-            PantallaLabel.Text += "8";
+            if (PantallaLabel.Enabled)
+                PantallaLabel.Text += "8";
+            else
+            {
+                PantallaLabel.Enabled = true;
+                PantallaLabel.Text = "";
+                PantallaLabel.Text += "8";
+            }
         }
 
         private void btn1_Click(object sender, EventArgs e)
         {
-           
+            if (PantallaLabel.Enabled)
                 PantallaLabel.Text += "1";
-
+            else
+            {
+                PantallaLabel.Enabled = true;
+                PantallaLabel.Text = "";
+                PantallaLabel.Text += "1";
+            }
         }
 
         private void btn2_Click(object sender, EventArgs e)
         {
-            PantallaLabel.Text += "2";
+            if (PantallaLabel.Enabled)
+                PantallaLabel.Text += "2";
+            else
+            {
+                PantallaLabel.Enabled = true;
+                PantallaLabel.Text = "";
+                PantallaLabel.Text += "2";
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -60,47 +83,94 @@ namespace Calculator
         private void CButton_Click(object sender, EventArgs e)
         {
             PantallaLabel.ResetText();
+            NumberContainerLabel.ResetText();
         }
 
         private void btn0_Click(object sender, EventArgs e)
         {
-            PantallaLabel.Text += "0";
+            if (PantallaLabel.Enabled)
+                PantallaLabel.Text += "0";
+            else
+            {
+                PantallaLabel.Enabled = true;
+                PantallaLabel.Text = "";
+                PantallaLabel.Text += "0";
+            }
         }
 
         private void btn3_Click(object sender, EventArgs e)
         {
-            PantallaLabel.Text += "3";
-            
+            if (PantallaLabel.Enabled)
+                PantallaLabel.Text += "3";
+            else
+            {
+                PantallaLabel.Enabled = true;
+                PantallaLabel.Text = "";
+                PantallaLabel.Text += "3";
+            }
+
         }
 
         private void btn4_Click(object sender, EventArgs e)
         {
-            PantallaLabel.Text += "4";
+            if (PantallaLabel.Enabled)
+                PantallaLabel.Text += "4";
+            else
+            {
+                PantallaLabel.Enabled = true;
+                PantallaLabel.Text = "";
+                PantallaLabel.Text += "4";
+            }
         }
 
         private void btn5_Click(object sender, EventArgs e)
         {
-            PantallaLabel.Text += "5";
+            if (PantallaLabel.Enabled)
+                PantallaLabel.Text += "5";
+            else
+            {
+                PantallaLabel.Enabled = true;
+                PantallaLabel.Text = "";
+                PantallaLabel.Text += "5";
+            }
         }
 
         private void Btn7_Click(object sender, EventArgs e)
         {
-            PantallaLabel.Text += "7";
+            if (PantallaLabel.Enabled)
+                PantallaLabel.Text += "7";
+            else
+            {
+                PantallaLabel.Enabled = true;
+                PantallaLabel.Text = "";
+                PantallaLabel.Text += "7";
+            }
         }
 
         private void btn9_Click(object sender, EventArgs e)
         {
-            PantallaLabel.Text += "9";
+            if (PantallaLabel.Enabled)
+                PantallaLabel.Text += "9";
+            else
+            {
+                PantallaLabel.Enabled = true;
+                PantallaLabel.Text = "";
+                PantallaLabel.Text += "9";
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var x = PantallaLabel.Text;
-            var y = "";
-            if (x.Length > 0)  
-                y = x.Remove(x.Length - 1);
+            if (PantallaLabel.Enabled)
+            {
+                var x = PantallaLabel.Text;
+                var y = "";
+                if (x.Length > 0)
+                    y = x.Remove(x.Length - 1);
 
-            PantallaLabel.Text = y;
+                PantallaLabel.Text = y;
+            }
+            
             
         }
 
@@ -134,6 +204,7 @@ namespace Calculator
                         var x = Convert.ToDouble(NumberContainerLabel.Text) + Convert.ToDouble(PantallaLabel.Text);
                         NumberContainerLabel.Text += OperatorLabel.Text + PantallaLabel.Text;
                         NumberContainerLabel.Text = "";
+                        PantallaLabel.Enabled = false;
                         PantallaLabel.Text = x.ToString();
                     }
                     break;
@@ -143,6 +214,7 @@ namespace Calculator
                         var x = Convert.ToDouble(NumberContainerLabel.Text) - Convert.ToDouble(PantallaLabel.Text);
                         NumberContainerLabel.Text += OperatorLabel.Text + PantallaLabel.Text;
                         NumberContainerLabel.Text = "";
+                        PantallaLabel.Enabled = false;
                         PantallaLabel.Text = x.ToString();
                     }
                     break;
@@ -152,6 +224,7 @@ namespace Calculator
                         var x = Convert.ToDouble(NumberContainerLabel.Text) * Convert.ToDouble(PantallaLabel.Text);
                         NumberContainerLabel.Text += OperatorLabel.Text + PantallaLabel.Text;
                         NumberContainerLabel.Text = "";
+                        PantallaLabel.Enabled = false;
                         PantallaLabel.Text = x.ToString();
                     }
                     break;
@@ -161,6 +234,7 @@ namespace Calculator
                         var x = Convert.ToDouble(NumberContainerLabel.Text) / Convert.ToDouble(PantallaLabel.Text);
                         NumberContainerLabel.Text += OperatorLabel.Text + PantallaLabel.Text;
                         NumberContainerLabel.Text = "";
+                        PantallaLabel.Enabled = false;
                         PantallaLabel.Text = x.ToString();
                     }
                     break;
@@ -190,6 +264,16 @@ namespace Calculator
         public void PantallaLabel_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void equalbtn_MouseClick(object sender, MouseEventArgs e)
+        {
+            
+        }
+
+        private void btn1_Validated(object sender, EventArgs e)
+        {
+            
         }
     }
 }
