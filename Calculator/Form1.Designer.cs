@@ -48,6 +48,8 @@
             this.CButton = new System.Windows.Forms.Button();
             this.PantallaLabel = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.NumberContainerLabel = new System.Windows.Forms.Label();
+            this.OperatorLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn1
@@ -180,6 +182,7 @@
             this.equalbtn.TabIndex = 24;
             this.equalbtn.Text = "=";
             this.equalbtn.UseVisualStyleBackColor = true;
+            this.equalbtn.Click += new System.EventHandler(this.equalbtn_Click);
             // 
             // plusbtn
             // 
@@ -190,6 +193,7 @@
             this.plusbtn.TabIndex = 25;
             this.plusbtn.Text = "+";
             this.plusbtn.UseVisualStyleBackColor = true;
+            this.plusbtn.Click += new System.EventHandler(this.plusbtn_Click);
             // 
             // minusbtn
             // 
@@ -200,6 +204,7 @@
             this.minusbtn.TabIndex = 26;
             this.minusbtn.Text = "-";
             this.minusbtn.UseVisualStyleBackColor = true;
+            this.minusbtn.Click += new System.EventHandler(this.minusbtn_Click);
             // 
             // Multibtn
             // 
@@ -221,6 +226,7 @@
             this.DivideButton.TabIndex = 28;
             this.DivideButton.Text = "%";
             this.DivideButton.UseVisualStyleBackColor = true;
+            this.DivideButton.Click += new System.EventHandler(this.DivideButton_Click);
             // 
             // CButton
             // 
@@ -236,7 +242,7 @@
             // PantallaLabel
             // 
             this.PantallaLabel.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.PantallaLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PantallaLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.PantallaLabel.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.PantallaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PantallaLabel.Location = new System.Drawing.Point(16, 63);
@@ -244,6 +250,7 @@
             this.PantallaLabel.Size = new System.Drawing.Size(449, 74);
             this.PantallaLabel.TabIndex = 30;
             this.PantallaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.PantallaLabel.Click += new System.EventHandler(this.PantallaLabel_Click);
             // 
             // button1
             // 
@@ -256,11 +263,32 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // NumberContainerLabel
+            // 
+            this.NumberContainerLabel.Location = new System.Drawing.Point(16, 9);
+            this.NumberContainerLabel.Name = "NumberContainerLabel";
+            this.NumberContainerLabel.Size = new System.Drawing.Size(401, 45);
+            this.NumberContainerLabel.TabIndex = 32;
+            this.NumberContainerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.NumberContainerLabel.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // OperatorLabel
+            // 
+            this.OperatorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OperatorLabel.Location = new System.Drawing.Point(423, 9);
+            this.OperatorLabel.Name = "OperatorLabel";
+            this.OperatorLabel.Size = new System.Drawing.Size(42, 45);
+            this.OperatorLabel.TabIndex = 33;
+            this.OperatorLabel.Text = "+";
+            this.OperatorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(477, 585);
+            this.ClientSize = new System.Drawing.Size(480, 585);
+            this.Controls.Add(this.OperatorLabel);
+            this.Controls.Add(this.NumberContainerLabel);
             this.Controls.Add(this.PantallaLabel);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.CButton);
@@ -312,6 +340,8 @@
         private System.Windows.Forms.Button CButton;
         private System.Windows.Forms.Label PantallaLabel;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label NumberContainerLabel;
+        private System.Windows.Forms.Label OperatorLabel;
     }
 }
 
